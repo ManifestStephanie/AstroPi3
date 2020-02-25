@@ -258,7 +258,7 @@ then
 fi
 
 # Allows headless user to update wifi network so it will remain in network manager
-sudo nmtui
+# sudo nmtui
 
 # This will set up your Pi to have access to internet with wifi, ethernet with DHCP, and ethernet with direct connection
 display "Setting up Ethernet for both link-local and DHCP"
