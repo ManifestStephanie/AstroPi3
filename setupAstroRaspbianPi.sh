@@ -234,10 +234,10 @@ display "Installing Synaptic"
 sudo apt -y install synaptic
 
 # This will enable SSH which is apparently disabled on Raspberry Pi by default.
-display "Enabling SSH"
-sudo apt -y install openssh-server
-sudo systemctl enable ssh
-sudo systemctl start ssh
+#display "Enabling SSH"
+#sudo apt -y install openssh-server
+#sudo systemctl enable ssh
+#sudo systemctl start ssh
 
 # This will install and configure network manager and remove dhcpcd5 because it has some issues
 # Also the commands below that setup networking depend upon network manager.
@@ -257,6 +257,8 @@ then
 	sed -i "s/type=dhcpcdui/type=space/g" /etc/xdg/lxpanel/LXDE/panels/panel
 fi
 
+# Allows headless user to update wifi network so it will remain in network manager
+sudo nmtui
 
 # This will set up your Pi to have access to internet with wifi, ethernet with DHCP, and ethernet with direct connection
 display "Setting up Ethernet for both link-local and DHCP"
